@@ -23,8 +23,8 @@ const PORT = 5000;
 
 // App
 const app = express();
-app.get("/", function(req, res) {
-  res.send("<h1>Hello world!</h1>");
+app.get("/api", function(req, res) {
+  res.send("Hello api!");
 });
 
 app.listen(PORT);

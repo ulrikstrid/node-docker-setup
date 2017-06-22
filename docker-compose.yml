@@ -1,22 +1,21 @@
-version: '2'
+version: '3'
 
 volumes:
-    database_data:
-        driver: local
+  database_data:
+    driver: local
 
 services:
 ################################
 #   Setup node container
 ################################
-
   node:
-    build: ./docker/node
+    build: ./server
     expose:
       - 5000
     ports:
       - 5000:5000
     volumes:
-      - ./docker/node:/usr/src/app/
+      - ./server:/usr/src/app/
     links:
       - db
     environment:
@@ -28,13 +27,14 @@ services:
 #   Setup frontend container
 ################################
   frontend:
-    build: ./docker/frontend
+    build: ./frontend
     expose:
-      - 5000
+      - 4000
     ports:
-      - 3000:4000
+      - 4000:3000
     volumes:
-      - ./docker/frontend:/usr/src/app/
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
     links:
       - node
 
