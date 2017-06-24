@@ -22,8 +22,6 @@ services:
       - 5000
     ports:
       - 5000:5000
-    volumes:
-      - ./server:/usr/src/app/
     links:
       - database
     environment:
@@ -40,8 +38,5 @@ services:
       - 4000
     ports:
       - 4000:3000
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
     links:
       - server  

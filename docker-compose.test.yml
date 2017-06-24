@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  #test_server:
+  #  build: ./server
+  #  links:
+  #    - test_database
+  #  environment:
+  #    - PGHOST=database
+  #    - PGDATABASE=postgres
+  #    - PGUSER=postgres
+  #  volumes:
+  #    - ./server/src:/usr/src/app/src/
+      
+  test_frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    command: npm run test

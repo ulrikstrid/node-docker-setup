@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  server:
+    volumes:
+      - ./server/src:/usr/src/app/src/
+      
+  frontend:
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+    command: npm run start
