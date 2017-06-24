@@ -4,7 +4,7 @@ const express = require("express");
 const pg = require("pg");
 const retry = require("retry");
 
-const operation = retry.operation({ retries: 10 });
+const operation = retry.operation({ retries: 3 });
 
 operation.attempt(function(attempt) {
   var client = new pg.Client();
