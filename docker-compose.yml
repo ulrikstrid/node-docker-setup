@@ -6,25 +6,12 @@ volumes:
 
 services:
 ################################
-#   Setup postgres container
-################################
-  database:
-    image: postgres:latest
-    volumes:
-      - database_data:/var/lib/postgresql/data
-
-################################
 #   Setup node container
 ################################
   server:
     build: ./server
-    expose:
-      - 5000
-    ports:
-      - 5000:5000
-    links:
-      - database
-    environment:
-      - PGHOST=database
-      - PGDATABASE=postgres
-      - PGUSER=postgres
+    command: echo "server"
+
+  frontend:
+    build: ./frontend
+    command: echo "server"
