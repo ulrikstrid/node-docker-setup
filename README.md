@@ -3,6 +3,6 @@ Docker setup for developing react-create-app with a server and postgres from a D
 
 ## TODO
 - [X] Setup development environemnt with automatic refresh etc
-- [ ] Setup testing 
+- [X] Setup testing 
 - [ ] Setup production environemnt 
 - [ ] Setup CI integration 
