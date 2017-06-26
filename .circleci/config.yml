@@ -3,18 +3,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: zenika/compose:latest
     working_directory: ~/app
 
     steps:
       - checkout
-
-      - run:
-          name: Install Docker Compose
-          command: |
-            set -x
-            curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-            chmod +x /usr/local/bin/docker-compose
 
       - setup_remote_docker
 
