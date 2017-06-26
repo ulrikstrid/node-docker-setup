@@ -14,21 +14,19 @@ services:
 ################################
   server:
     build: ./server
-    expose:
-      - 5000
-    ports:
-      - 5000:5000
-    volumes:
-      - ./server/src:/usr/src/app/src/
-    command: npm run dev
-      
-  frontend:
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
+    links:
+      - database
+    environment:
+      - PGHOST=database
+      - PGDATABASE=postgres
+      - PGUSER=postgres
     command: npm run start
+
+  frontend:
     build: ./frontend
     ports:
-      - 4000:3000
+      - 80:80
     links:
-      - server  
+      - server
+    environment:
+      - API_URL=http://server:5000

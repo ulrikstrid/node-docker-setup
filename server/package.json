@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --watch src src/app.js",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "echo \"No tests\""
   },
   "dependencies": {
     "express": "^4.15.3",
