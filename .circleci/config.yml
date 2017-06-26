@@ -2,9 +2,17 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/frontend
     docker:
       - image: circleci/node:latest
+    working_directory: ~/frontend
+    
     steps:
       - checkout
-      - run: npm run test
+
+      - run:
+          name: NPM install
+          command: npm install
+
+      - run:
+          name: Run unit tests
+          command: npm run test
