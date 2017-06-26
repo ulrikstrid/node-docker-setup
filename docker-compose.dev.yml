@@ -8,8 +8,12 @@ services:
     image: postgres:latest
     volumes:
       - database_data:/var/lib/postgresql/data
-      
+
+################################
+#   Setup node container
+################################
   server:
+    build: ./server
     expose:
       - 5000
     ports:

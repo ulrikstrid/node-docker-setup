@@ -9,7 +9,11 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data
 
+################################
+#   Setup node container
+################################
   server:
+    build: ./server
     links:
       - database
     environment:

@@ -1,16 +1,20 @@
 version: '3'
 
 services:
-  #test_server:
-  #  build: ./server
+  test_server:
+    build: ./server
+    environment:
+      CI: "${CI}"
+    command: npm run test
+    volumes:
+      - ./server/src:/usr/src/app/src/
   #  links:
   #    - test_database
   #  environment:
   #    - PGHOST=database
   #    - PGDATABASE=postgres
   #    - PGUSER=postgres
-  #  volumes:
-  #    - ./server/src:/usr/src/app/src/
+    
       
   test_frontend:
     build: ./frontend

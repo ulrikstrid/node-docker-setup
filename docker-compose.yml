@@ -3,15 +3,3 @@ version: '3'
 volumes:
   database_data:
     driver: local
-
-services:
-################################
-#   Setup node container
-################################
-  server:
-    build: ./server
-    command: echo "server"
-
-  frontend:
-    build: ./frontend
-    command: echo "server"
