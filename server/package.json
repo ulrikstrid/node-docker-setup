@@ -6,7 +6,8 @@
   "author": "Ulrik Strid <ulrik.strid@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch src src/app.js"
+    "dev": "nodemon --watch src src/app.js",
+    "start": "node src/app.js"
   },
   "dependencies": {
     "express": "^4.15.3",

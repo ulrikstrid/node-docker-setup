@@ -4,9 +4,15 @@ services:
   server:
     volumes:
       - ./server/src:/usr/src/app/src/
+    command: npm run dev
       
   frontend:
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
     command: npm run start
+    build: ./frontend
+    ports:
+      - 4000:3000
+    links:
+      - server  
