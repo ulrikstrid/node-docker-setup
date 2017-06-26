@@ -1,0 +1,9 @@
+version: 2
+  jobs:
+    build:
+      working_directory: ~/frontend
+      docker:
+        - image: circleci/node:[TAG]
+      steps:
+        - checkout
+        - run: npm run test
