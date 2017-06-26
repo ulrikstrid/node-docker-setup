@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: zenika/compose:latest
+      - image: 1maa/docker-compose
     working_directory: ~/app
 
     steps:
