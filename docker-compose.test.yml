@@ -6,8 +6,6 @@ services:
     environment:
       CI: "${CI}"
     command: npm run test
-    volumes:
-      - ./server/src:/usr/src/app/src/
   #  links:
   #    - test_database
   #  environment:
@@ -20,7 +18,4 @@ services:
     build: ./frontend
     environment:
       CI: "${CI}"
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-      - ./frontend/public:/usr/src/app/public
     command: npm run test
