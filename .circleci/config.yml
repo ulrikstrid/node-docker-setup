@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/frontend
     docker:
-      - image: circleci/node:[TAG]
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: npm run test
